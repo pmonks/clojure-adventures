@@ -29,7 +29,7 @@
     (print "Finding matching words (original)... ")
     (flush)
     (println (take num-results (my-time (solver/matching-words characters words))))
-    (print "Finding matching words (2)... ")
+    (print "Finding matching words (precalculated character frequencies)... ")
     (flush)
     (println (take num-results (my-time (solver/matching-words2 characters words))))
     (print "Generating anagrams... ")
