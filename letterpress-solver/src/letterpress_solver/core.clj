@@ -26,18 +26,18 @@
 (defn- solve
   [characters words num-results]
   (do
-    (print "Finding matching words (original)... ")
-    (flush)
-    (println (take num-results (my-time (solver/matching-words characters words))))
+;    (print "Finding matching words (original)... ")
+;    (flush)
+;    (println (take num-results (my-time (solver/matching-words characters words))))
     (print "Finding matching words (precalculated character frequencies)... ")
     (flush)
     (println (take num-results (my-time (solver/matching-words2 characters words))))
-    (print "Generating anagrams... ")
-    (flush)
-    (let [anagrams (my-time (solver/anagrams words))]
-      (print "Finding matching words (anagrams)... ")
-      (flush)
-      (println (take num-results (my-time (solver/matching-words-from-anagrams characters anagrams)))))
+;    (print "Generating anagrams... ")
+;    (flush)
+;    (let [anagrams (my-time (solver/anagrams words))]
+;      (print "Finding matching words (anagrams)... ")
+;      (flush)
+;      (println (take num-results (my-time (solver/matching-words-from-anagrams characters anagrams)))))
   ))
 
 (defn -main
