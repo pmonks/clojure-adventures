@@ -9,7 +9,7 @@
 
 (defproject letterpress-solver "0.1.0-SNAPSHOT"
   :description "A word finder for a variety of word games such as LetterPress and Scrabble."
-  :url "https://github.com/pmonks/clojure-adventures"
+  :url "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url "http://creativecommons.org/licenses/by-sa/3.0/"}
   :dependencies [[org.clojure/clojure "1.4.0"]]

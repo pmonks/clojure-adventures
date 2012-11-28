@@ -4,7 +4,7 @@ FIXME: description
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver.
 
 ## Usage
 
