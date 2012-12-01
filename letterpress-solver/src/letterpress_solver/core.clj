@@ -13,7 +13,7 @@
   (:gen-class))
 
 (def word-source         "/usr/share/dict/words")
-(def default-num-results 5)
+(def default-num-results 50)
 
 (defmacro my-time
   "Evaluates expr and prints the time it took.  Returns the value of expr.  Minor modification of clojure.core/time."
@@ -45,7 +45,9 @@
    Can be used to cheat at games like Scrabble, LetterPress, etc."
   [& args]
   (if (< (count args) 1)
-    (println "You must provide the list of characters to make words from.")
+    (println "You must provide the list of characters to make words from.  You can also
+optionally follow it with the number of results you'd like to see (default
+is 50).")
     (let [characters    (first args)
           words         (do
                            (print (str "Loading " word-source "... "))
