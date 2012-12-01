@@ -42,7 +42,7 @@
 
 ; ---- Pre-calculated frequencies for characters (fastest)
 
-(defn- safe-get
+(defn- get-with-default
   "A safe version of get that returns a default-value when the key doesn't exist in the map."
   [map key default-value]
   (let [result (get map key)]
@@ -53,7 +53,7 @@
 (defn- contains-letter-sufficient-times2?
   "Does the letter appear in the string of characters at least as many times as it appears in the word?"
   [character-frequencies word-frequencies letter]
-  (<= (get word-frequencies letter) (safe-get character-frequencies letter 0)))
+  (<= (get word-frequencies letter) (get-with-default character-frequencies letter 0)))
 
 (defn- contains-word2?
   "Can the word be constructed from the string of characters represented by characters-alphabet-frequencies?"
