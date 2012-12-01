@@ -45,9 +45,9 @@
    Can be used to cheat at games like Scrabble, LetterPress, etc."
   [& args]
   (if (< (count args) 1)
-    (println "You must provide the list of characters to make words from.  You can also
+    (println (format "You must provide the list of characters to make words from.  You can also
 optionally follow it with the number of results you'd like to see (default
-is 50).")
+is %d)." default-num-results))
     (let [characters    (first args)
           words         (do
                            (print (str "Loading " word-source "... "))
