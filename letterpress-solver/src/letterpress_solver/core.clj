@@ -13,7 +13,7 @@
   (:gen-class))
 
 (def word-source         "/usr/share/dict/words")
-(def default-num-results 50)
+(def default-num-results 100)
 
 (defmacro my-time
   "Evaluates expr and prints the time it took.  Returns the value of expr.  Minor modification of clojure.core/time."

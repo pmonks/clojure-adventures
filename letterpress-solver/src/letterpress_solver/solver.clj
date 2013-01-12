@@ -43,7 +43,7 @@
 ; ---- Pre-calculated frequencies for characters (fastest)
 
 (defn- get-with-default
-  "A safe version of get that returns a default-value when the key doesn't exist in the map."
+  "A version of get that returns a default-value when the key doesn't exist in the map."
   [map key default-value]
   (let [result (get map key)]
     (if (nil? result)
