@@ -30,7 +30,7 @@
     (every? identity (map #(contains-letter-sufficient-times? character-frequencies word-frequencies %) word))))
 
 (defn matching-words
-  "Returns all of the words from the dictionary that can be made from the string of characters.
+  "Returns all of the words from the dictionary that can be made from the string of characters, reverse sorted by length.
   e.g. (matching-words \"abcd\" [\"bad\" \"good\"]) -> [\"bad\"]"
   [characters dictionary]
   (let [character-frequencies (frequencies characters)]
@@ -44,7 +44,7 @@
     (every? identity (map #(contains-letter-sufficient-times? word-frequencies character-frequencies %) characters))))
 
 (defn words-containing
-  "Returns all words from the dictionary that contain the given characters.
+  "Returns all words from the dictionary that contain the given characters, reverse sorted by length.
   e.g. (words-containing \"ae\" [\"apple\" \"blueberry\"]) -> [\"apple\"]"
   [characters dictionary]
   (sort-by #(conj [] (- (count %)) %) (filter #(contains-letters? characters %) dictionary)))

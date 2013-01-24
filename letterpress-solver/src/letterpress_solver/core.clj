@@ -31,7 +31,7 @@
                                    ["-d" "--dictionary-source" "The source dictionary to use (may be a file or a URL)" :default "/usr/share/dict/words"]
                                    ["-h" "--help"              "Show help" :default false :flag true])]
     (let [all-letters       (:all-letters       options)
-          required-letters  (:required-letters options)
+          required-letters  (:required-letters  options)
           num-results       (:num-results       options)
           dictionary-source (:dictionary-source options)
           help              (:help              options)]
