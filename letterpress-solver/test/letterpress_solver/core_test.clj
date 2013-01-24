@@ -1,5 +1,5 @@
 ;
-; Copyright © 2012 Peter Monks (pmonks@gmail.com)
+; Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
 ;
 ; This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 ; Unported License. To view a copy of this license, visit
@@ -8,9 +8,7 @@
 ;
 
 (ns letterpress-solver.core-test
-  (:use clojure.test
+  (:use midje.sweet
         letterpress-solver.core))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+; For orsm autotest goodness, run lein midje --lazytest

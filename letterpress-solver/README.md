@@ -30,6 +30,6 @@ FIXME: listing of options this app accepts.
 
 ## License
 
-Copyright © 2012 Peter Monks (pmonks@gmail.com)
+Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
 
 Distributed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
