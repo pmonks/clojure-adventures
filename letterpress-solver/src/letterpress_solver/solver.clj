@@ -24,7 +24,7 @@
   (<= (get-with-default word-frequencies letter 0) (get-with-default character-frequencies letter 0)))
 
 (defn- contains-word?
-  "Can the word be constructed from the string of characters represented by characters-alphabet-frequencies?"
+  "Can the word be constructed from the string of characters represented by characters-frequencies?"
   [character-frequencies word]
   (let [word-frequencies (frequencies word)]
     (every? identity (map #(contains-letter-sufficient-times? character-frequencies word-frequencies %) word))))
