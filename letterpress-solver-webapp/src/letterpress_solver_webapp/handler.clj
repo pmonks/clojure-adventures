@@ -30,21 +30,22 @@
     [:head
       [:meta {:charset "utf-8"}]
       [:title "LetterPress Solver"]]
-    [:body content]))
+    [:body {:style "font-family:Lucida Grande,sans-serif; font-size:11px"} content]))
 
 (defn page-enter-letters
   ([] (page-enter-letters "" "" 100))
   ([all-letters required-letters number-of-results]
    (page-layout
      [:h1 "LetterPress Solver"]
-     (form-to {:autocorrect "off", :autocapitalize "off"} [:post "/"]
+     (form-to {:autocorrect "off", :autocapitalize "off", :target "results"} [:post "/"]
        (text-field {:placeholder "All Letters", :tabindex 1, :autofocus true, :size 100 } "all-letters" all-letters)
        [:br]
        (text-field {:placeholder "Required Letters (optional)", :tabindex 2, :size 100 } "required-letters" required-letters)
        [:br]
        (text-field {:placeholder "Number of Results", :tabindex 3, :size 20 } "number-of-results" number-of-results) "results"
        [:br]
-       (submit-button {:tabindex 4} "Solve")))))
+       (submit-button {:tabindex 4} "Solve"))
+     [:iframe {:name "results", :display "block", :height "600", :width "100%"}])))
 
 (defn- get-board-cache
   [board-cache all-letters dictionary]
@@ -71,8 +72,8 @@
 (defn page-show-results
   [results]
   (page-layout
-    [:h1 "Results"]
-    [:a {:href "/"} "Solve another one"]
+;    [:h1 "Results"]
+;    [:a {:href "/"} "Solve another one"]
     [:ul
       (for [result results]
         [:li result])]))
