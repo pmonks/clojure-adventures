@@ -29,7 +29,7 @@
   (html5
     [:head
       [:meta {:charset "utf-8"}]
-      [:title "LetterPress Solver"]]
+      [:title "LetterPress Solver by Peter Monks"]]
     [:body {:style "font-family:Lucida Grande,sans-serif; font-size:11px"} content]))
 
 (defn page-enter-letters
@@ -37,6 +37,11 @@
   ([all-letters required-letters number-of-results]
    (page-layout
      [:h1 "LetterPress Solver"]
+     [:h3 "By Peter Monks"]
+     [:p "A solver for the orsm iOS game "
+         [:a {:href "https://itunes.apple.com/us/app/letterpress-word-game/id526619424?mt=8"} "LetterPress"]
+         ". " [:strong "Cheating is bad mmmkay?"] [:br] "Source, license information, issue tracker etc. available on "
+         [:a {:href "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp"} "GitHub"] "."]
      (form-to {:autocorrect "off", :autocapitalize "off", :target "results"} [:post "/"]
        (text-field {:placeholder "All Letters", :tabindex 1, :autofocus true, :size 100 } "all-letters" all-letters)
        [:br]
@@ -45,7 +50,7 @@
        (text-field {:placeholder "Number of Results", :tabindex 3, :size 20 } "number-of-results" number-of-results) "results"
        [:br]
        (submit-button {:tabindex 4} "Solve"))
-     [:iframe {:name "results", :display "block", :height "600", :width "100%"}])))
+     [:iframe {:name "results", :display "block", :height "500px", :width "525px"}])))
 
 (defn- get-board-cache
   [board-cache all-letters dictionary]
@@ -72,11 +77,8 @@
 (defn page-show-results
   [results]
   (page-layout
-;    [:h1 "Results"]
-;    [:a {:href "/"} "Solve another one"]
-    [:ul
-      (for [result results]
-        [:li result])]))
+    (for [result results]
+      [:div result])))   ; This is kind of shit but I can't figure out how to get hiccup not to interpret "result" as an HTML tag
 
 (defroutes app-routes
   (GET "/" [all-letters required-letters number-of-results] (page-enter-letters all-letters required-letters (if (s/blank? number-of-results) 100 number-of-results)))
