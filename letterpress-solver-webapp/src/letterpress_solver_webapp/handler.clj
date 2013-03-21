@@ -43,14 +43,15 @@
          ". " [:strong "Cheating is bad mmmkay?"] [:br] "Source, license information, issue tracker etc. available on "
          [:a {:href "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp"} "GitHub"] "."]
      (form-to {:autocorrect "off", :autocapitalize "off", :target "results"} [:post "/"]
-       (text-field {:placeholder "All Letters", :tabindex 1, :autofocus true, :size 100 } "all-letters" all-letters)
+       (text-field {:placeholder "Letters on the board", :tabindex 1, :autofocus true, :size 100 } "all-letters" all-letters)
        [:br]
-       (text-field {:placeholder "Required Letters (optional)", :tabindex 2, :size 100 } "required-letters" required-letters)
+       (text-field {:placeholder "Letters you'd like the words to include (optional)", :tabindex 2, :size 100 } "required-letters" required-letters)
        [:br]
-       (text-field {:placeholder "Number of Results", :tabindex 3, :size 20 } "number-of-results" number-of-results) "results"
+       (text-field {:placeholder "Number of words to display", :tabindex 3, :size 20 } "number-of-results" number-of-results) "results"
        [:br]
        (submit-button {:tabindex 4} "Solve"))
-     [:iframe {:name "results", :display "block", :height "500px", :width "525px"}])))
+     [:br]
+     [:iframe {:name "results", :display "block", :height "500px", :width "200px"}])))
 
 (defn- get-board-cache
   [board-cache all-letters dictionary]

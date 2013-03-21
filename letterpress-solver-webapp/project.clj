@@ -13,17 +13,17 @@
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url  "http://creativecommons.org/licenses/by-sa/3.0/"}
   :dependencies [
-                 [org.clojure/clojure    "1.4.0"]
-                 [org.clojure/core.cache "0.6.2"]
+                 [org.clojure/clojure    "1.5.1"]
+                 [org.clojure/core.cache "0.6.3"]
                  [http-kit               "2.0.0-RC4"]
                  [compojure              "1.1.5"]
                  [hiccup                 "1.0.2"]
                  [letterpress-solver     "0.1.0-SNAPSHOT"]
-                 [ring/ring-core         "1.1.8"]
-                 [ring/ring-devel        "1.1.8"]
-                 [environ                "0.2.1"]
+                 [ring/ring-core         "1.2.0-beta1"]
+                 [ring/ring-devel        "1.2.0-beta1"]
+                 [environ                "0.4.0"]
                 ]
-  :plugins [[lein-ring "0.8.2"]]
+  :plugins [[lein-ring "0.8.3"]]
   :ring {:handler letterpress-solver-webapp.handler/app}
   :profiles
     {:dev {:dependencies [[ring-mock "0.1.3"]]}}
