@@ -8,6 +8,7 @@
 ;
 
 (defproject letterpress-solver "0.1.0-SNAPSHOT"
+  :min-lein-version "2.0.0"
   :description "A word finder for a variety of word games such as LetterPress and Scrabble."
   :url "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
@@ -18,9 +19,5 @@
                 ]
   :profiles {:dev {:dependencies [
                                   [midje "1.5.0"]
-;                                  [com.stuartsierra/lazytest "1.2.3"]
-                                 ]
-;                   :plugins [[lein-midje "2.0.4"]]
-            }}
-;  :repositories {"stuart" "http://stuartsierra.com/maven2"} ; For lazytest
+                                 ]}}
   :main letterpress-solver.core)

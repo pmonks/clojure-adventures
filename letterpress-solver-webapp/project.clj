@@ -8,6 +8,7 @@
 ;
 
 (defproject letterpress-solver-webapp "0.1.0-SNAPSHOT"
+  :min-lein-version "2.0.0"
   :description "Webapp for LetterPress Solver"
   :url "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
@@ -26,5 +27,7 @@
   :plugins [[lein-ring "0.8.3"]]
   :ring {:handler letterpress-solver-webapp.handler/app}
   :profiles
-    {:dev {:dependencies [[ring-mock "0.1.3"]]}}
+    {:dev {:dependencies [
+                          [ring-mock "0.1.3"]
+                         ]}}
   :main letterpress-solver-webapp.core)

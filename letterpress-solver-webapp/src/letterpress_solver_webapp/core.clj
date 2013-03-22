@@ -13,9 +13,9 @@
             [letterpress-solver-webapp.handler :as handler]
             [environ.core :refer [env]]))
 
-
 (defn -main
   "Start the server."
   [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
-    (def stop-server (http/run-server #'letterpress-solver-webapp.handler/app {:port port}))))
+    (def stop-server (http/run-server #'letterpress-solver-webapp.handler/app {:port port}))
+    (str "Server running on port " port ".")))
