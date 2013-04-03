@@ -18,4 +18,4 @@
   [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
     (def stop-server (http/run-server #'letterpress-solver-webapp.handler/app {:port port}))
-    (str "Server running on port " port ".")))
+    (println (str "LetterPress Solver Web Server running on port " port "."))))

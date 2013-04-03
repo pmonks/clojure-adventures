@@ -11,7 +11,7 @@
   (:use midje.sweet
         letterpress-solver.solver))
 
-; For orsm autotest goodness, run lein midje --lazytest
+; For orsm autotest goodness, run lein midje :autotest
 
 (fact (#'letterpress-solver.solver/get-with-default {:foo "foo", :bar "bar"} :blah "blah") => "blah")
 (fact (#'letterpress-solver.solver/get-with-default {:foo "foo", :bar "bar"} :foo  "blah") => "foo")

@@ -16,13 +16,13 @@
   :dependencies [
                  [org.clojure/clojure    "1.5.1"]
                  [org.clojure/core.cache "0.6.3"]
-                 [http-kit               "2.0.0-RC4"]
+                 [http-kit               "2.0.0"]
                  [compojure              "1.1.5"]
-                 [hiccup                 "1.0.2"]
-                 [letterpress-solver     "0.1.0-SNAPSHOT"]
-                 [ring/ring-core         "1.2.0-beta1"]
-                 [ring/ring-devel        "1.2.0-beta1"]
+                 [hiccup                 "1.0.3"]
+                 [ring/ring-core         "1.2.0-beta2"]
+                 [ring/ring-devel        "1.2.0-beta2"]
                  [environ                "0.4.0"]
+                 [letterpress-solver     "0.1.0-SNAPSHOT"]
                 ]
   :plugins [[lein-ring "0.8.3"]]
   :ring {:handler letterpress-solver-webapp.handler/app}
