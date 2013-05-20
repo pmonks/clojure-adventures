@@ -18,6 +18,6 @@
                  [org.clojure/tools.cli "0.2.2"]
                 ]
   :profiles {:dev {:dependencies [
-                                  [midje "1.5.0"]
+                                  [midje "1.5.1"]
                                  ]}}
   :main letterpress-solver.core)
