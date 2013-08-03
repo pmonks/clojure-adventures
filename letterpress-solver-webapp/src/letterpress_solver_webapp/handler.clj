@@ -15,6 +15,7 @@
   (:use hiccup.page)
   (:use hiccup.form)
   (:require [clojure.string            :as s]
+            [clojure.java.io           :as io]
             [clojure.core.cache        :as cache]
             [compojure.handler         :as handler]
             [compojure.route           :as route]
@@ -23,7 +24,7 @@
 ; Cache up to 4 sets of matching words for a given list of letters
 (def board-cache (atom (cache/lru-cache-factory {} :threshold 4)))
 
-(def dictionary (s/split (slurp "/usr/share/dict/words") #"\s+"))
+(def dictionary (s/split (slurp (io/resource "linux.words")) #"\s+"))
 
 (defn page-layout [& content]
   (html5
