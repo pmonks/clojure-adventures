@@ -1,32 +1,24 @@
 # letterpress-solver-webapp
 
-FIXME: description
+Webapp front end for [my LetterPress Solver](https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver).
 
 ## Installation
 
-Download from https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp.
+Checkout the source from [GitHub](https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp).
 
 ## Usage
 
-FIXME: explanation
+For now the letterpress solver is source only, so...
 
-    $ java -jar letterpress-solver-0.1.0-standalone.jar [args]
+```shell
+ lein deps
+ # Wait while Maven downloads teh internetz
+ lein run
+```
 
-## Options
+Then point your browser to http://localhost:5000/.  Ctrl+C to terminate.
 
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Note: if you're lucky the [instance deployed on Heroku](http://pmonks-letterpress-solver.herokuapp.com/) may be up and running.
 
 ## License
 

@@ -1,32 +1,29 @@
 # letterpress-solver
 
-FIXME: description
+A solver for the orsm iOS game [LetterPress](https://itunes.apple.com/us/app/letterpress-word-game/id526619424?mt=8).
+
+Note: while this tool can make it trivial to win LetterPress games, it doesn't take all the thinking out.  In particular it is completely oblivious to the territorial aspects of the game (though if you're aware of territorial tactics it can help a great deal, via the "required letters" option).
 
 ## Installation
 
-Download from https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver.
+Checkout the source from [GitHub](https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver).
 
 ## Usage
 
-FIXME: explanation
+For now the letterpress solver is source only, so...
 
-    $ java -jar letterpress-solver-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+```shell
+ lein deps
+ # Wait while Maven downloads teh internetz
+ lein run -- [switches]
+```
+    Switches                 Default      Desc                                                  
+    --------                 -------      ----                                                  
+    -a, --all-letters                     All letters on the board (mandatory)
+    -r, --required-letters                The letters that must appear in the resulting word(s) (optional)
+    -n, --num-results        100          The number of results (optional)
+    -d, --dictionary-source  linux.words  The source dictionary to use (may be a file or a URL) (optional)
+    -h, --no-help, --help    false        Show help (optional)
 
 ## License
 
