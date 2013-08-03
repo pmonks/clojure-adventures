@@ -2,7 +2,10 @@
 
 A solver for the orsm iOS game [LetterPress](https://itunes.apple.com/us/app/letterpress-word-game/id526619424?mt=8).
 
-Note: while this tool can make it trivial to win LetterPress games, it doesn't take all the thinking out.  In particular it is completely oblivious to the territorial aspects of the game (though if you're aware of territorial tactics it can help a great deal, via the "required letters" option).
+Notes:
+ * while this tool can make it trivial to win LetterPress games, it doesn't take all the thinking out.  In particular it is completely oblivious to the territorial aspects of the game (though if you're aware of territorial tactics it can help a great deal, via the "required letters" option).
+ * LetterPress uses a custom dictionary that is different to the one used by this tool.  It's likely this tool will find words that LetterPress doesn't accept, and vice versa.
+ * This tool doesn't take all possible suffixes of a word into account (particularly plurals).  You may need to add those on yourself, if the board allows.
 
 ## Installation
 
