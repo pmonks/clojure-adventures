@@ -13,6 +13,7 @@
   :url "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver-webapp"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url  "http://creativecommons.org/licenses/by-sa/3.0/"}
+  :javac-target "1.7"
   :dependencies [
                  [org.clojure/clojure    "1.5.1"]
                  [org.clojure/core.cache "0.6.3"]
