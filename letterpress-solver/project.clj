@@ -20,4 +20,5 @@
   :profiles {:dev {:dependencies [
                                   [midje "1.5.1"]
                                  ]}}
+  :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main letterpress-solver.core)

@@ -16,11 +16,11 @@
   :dependencies [
                  [org.clojure/clojure    "1.5.1"]
                  [org.clojure/core.cache "0.6.3"]
-                 [http-kit               "2.1.3"]
+                 [http-kit               "2.1.8"]
                  [compojure              "1.1.5"]
-                 [hiccup                 "1.0.3"]
-                 [ring/ring-core         "1.2.0-beta2"]
-                 [ring/ring-devel        "1.2.0-beta2"]
+                 [hiccup                 "1.0.4"]
+                 [ring/ring-core         "1.2.0"]
+                 [ring/ring-devel        "1.2.0"]
                  [environ                "0.4.0"]
                  [letterpress-solver     "0.1.0-SNAPSHOT"]
                 ]
@@ -28,6 +28,7 @@
   :ring {:handler letterpress-solver-webapp.handler/app}
   :profiles
     {:dev {:dependencies [
-                          [ring-mock "0.1.3"]
+                          [ring-mock "0.1.5"]
                          ]}}
+  :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main letterpress-solver-webapp.core)
