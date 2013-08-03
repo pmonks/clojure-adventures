@@ -9,6 +9,7 @@
 
 (ns letterpress-solver.core
   (:require [clojure.string :as s]
+            [clojure.java.io :as io]
             [letterpress-solver.solver :as solver])
   (:use [clojure.tools.cli :only [cli]])
   (:gen-class))
@@ -28,7 +29,7 @@
                                    ["-a" "--all-letters"       "All letters on the board"]
                                    ["-r" "--required-letters"  "The letters that must appear in the resulting word(s)" :default nil]
                                    ["-n" "--num-results"       "The number of results" :default 100]
-                                   ["-d" "--dictionary-source" "The source dictionary to use (may be a file or a URL)" :default "/usr/share/dict/words"]
+                                   ["-d" "--dictionary-source" "The source dictionary to use (may be a file or a URL)" :default "linux.words"]
                                    ["-h" "--help"              "Show help" :default false :flag true])]
     (let [all-letters       (:all-letters       options)
           required-letters  (:required-letters  options)
@@ -40,7 +41,9 @@
         (let [words (do
                       (print (str "Loading " dictionary-source "... "))
                       (flush)
-                      (my-time (s/split (slurp dictionary-source) #"\s+")))]
+                      (if (= dictionary-source "linux.words")
+                        (my-time (s/split (slurp (io/resource dictionary-source)) #"\s+"))
+                        (my-time (s/split (slurp dictionary-source) #"\s+"))))]
           (print "Finding all possible words... ")
           (flush)
           (let [all-results (my-time (solver/matching-words all-letters words))]
