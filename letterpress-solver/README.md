@@ -25,6 +25,15 @@ For now the letterpress solver is source only, so...
     -d, --dictionary-source  linux.words  The source dictionary to use (may be a file or a URL) (optional)
     -h, --no-help, --help    false        Show help (optional)
 
+### Examples:
+```shell
+ # Find the first 100 words that can be made from the alphabet
+ lein run -- -a abcdefghijklmnopqrstuvwxyz
+
+ # As above, but must contain the letters Q and Z
+ lein run -- -a abcdefghijklmnopqrstuvwxyz -r qz
+```
+
 ## License
 
 Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
