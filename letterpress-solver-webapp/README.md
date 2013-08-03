@@ -16,7 +16,7 @@ For now the letterpress solver is source only, so...
  lein run
 ```
 
-Then point your browser to http://localhost:5000/.  Ctrl+C to terminate.
+Then point your browser to [http://localhost:5000/](http://localhost:5000/).  Hit Ctrl+C to terminate.
 
 Note: if you're lucky the [instance deployed on Heroku](http://pmonks-letterpress-solver.herokuapp.com/) may be up and running.
 
