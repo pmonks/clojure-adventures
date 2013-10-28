@@ -17,7 +17,7 @@
   :dependencies [
                  [org.clojure/clojure    "1.5.1"]
                  [org.clojure/core.cache "0.6.3"]
-                 [http-kit               "2.1.8"]
+                 [http-kit               "2.1.13"]
                  [compojure              "1.1.5"]
                  [hiccup                 "1.0.4"]
                  [ring/ring-core         "1.2.0"]
