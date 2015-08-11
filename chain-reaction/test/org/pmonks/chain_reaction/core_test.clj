@@ -18,18 +18,15 @@
   )
 
 (fact "legal-coords?"
-  (legal-coords? (new-board) [0 0])   => true
-  (legal-coords? (new-board) [7 7])   => true
-  (legal-coords? (new-board) [-1 -1]) => false
-  (legal-coords? (new-board) [8 8])   => false
-  (legal-coords? (new-board) [0 -1])  => false
-  (legal-coords? (new-board) [-1 0])  => false
-  (legal-coords? (new-board) [7 8])   => false
-  (legal-coords? (new-board) [8 7])   => false
-  )
-
-(fact "all-coords"
-  (all-coords (new-board 2 2)) => '([0 0] [0 1] [1 0] [1 1])
+  (legal-coords? (new-board)     [0 0])   => true
+  (legal-coords? (new-board)     [7 7])   => true
+  (legal-coords? (new-board)     [-1 -1]) => false
+  (legal-coords? (new-board)     [8 8])   => false
+  (legal-coords? (new-board)     [0 -1])  => false
+  (legal-coords? (new-board)     [-1 0])  => false
+  (legal-coords? (new-board)     [7 8])   => false
+  (legal-coords? (new-board)     [8 7])   => false
+  (legal-coords? (new-board 2 2) [2 2])   => false
   )
 
 (fact "set-cell"
@@ -39,6 +36,15 @@
 (fact "get-cell"
   (get-cell (new-board) [0 0])                                        => nil
   (get-cell (set-cell (new-board) [0 0] (new-cell :player1 1)) [0 0]) => {:owner :player1 :count 1}
+  )
+
+(fact "all-cells"
+  (all-cells (new-board 2 2)) => '([0 0] [0 1] [1 0] [1 1])
+  )
+
+(fact "occupied-cells"
+  (occupied-cells (new-board))                                        => nil
+  (occupied-cells (set-cell (new-board) [0 0] (new-cell :player1 1))) => '([0 0])
   )
 
 (fact "cell-owner"

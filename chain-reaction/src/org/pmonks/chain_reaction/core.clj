@@ -32,9 +32,13 @@
        (>= y 0)
        (<  y (board-height board))))
 
-(defn all-coords
+(defn all-cells
   [board]
   (for [x (range (board-width board)) y (range (board-height board))] [x y]))
+
+(defn occupied-cells
+  [board]
+  (keys (board-cells board)))
 
 (defn get-cell
   [board coords]
@@ -96,12 +100,12 @@
 
 (defn any-full-cells?
   [board]
-  (boolean (some true? (map #(full? board %) (keys (board-cells board))))))
+  (boolean (some true? (map #(full? board %) (occupied-cells board)))))
 
 (defn find-full-cell
   "Find the first full cell on the board, or nil if there aren't any."
   [board]
-  (let [cell-coords (keys (board-cells board))]
+  (let [cell-coords (occupied-cells board)]
     (loop [board         board
            cell-to-check (first cell-coords)
            other-cells   (rest  cell-coords)]
