@@ -15,17 +15,17 @@
             :url  "http://creativecommons.org/licenses/by-sa/3.0/"}
   :javac-target "1.7"
   :dependencies [
-                 [org.clojure/clojure    "1.5.1"]
-                 [org.clojure/core.cache "0.6.3"]
-                 [http-kit               "2.1.13"]
-                 [compojure              "1.1.5"]
-                 [hiccup                 "1.0.4"]
-                 [ring/ring-core         "1.2.0"]
-                 [ring/ring-devel        "1.2.0"]
-                 [environ                "0.4.0"]
+                 [org.clojure/clojure    "1.7.0"]
+                 [org.clojure/core.cache "0.6.4"]
+                 [http-kit               "2.1.19"]
+                 [compojure              "1.4.0"]
+                 [hiccup                 "1.0.5"]
+                 [ring/ring-core         "1.4.0"]
+                 [ring/ring-devel        "1.4.0"]
+                 [environ                "1.0.0"]
                  [letterpress-solver     "0.1.0-SNAPSHOT"]
                 ]
-  :plugins [[lein-ring "0.8.3"]]
+  :plugins [[lein-ring "0.9.6"]]
   :ring {:handler letterpress-solver-webapp.handler/app}
   :profiles
     {:dev {:dependencies [

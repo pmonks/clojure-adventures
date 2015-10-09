@@ -16,10 +16,10 @@
   :javac-target "1.7"
   :dependencies [
                  [org.clojure/clojure "1.5.1"]
-                 [org.clojure/tools.cli "0.2.4"]
+                 [org.clojure/tools.cli "0.3.3"]
                 ]
   :profiles {:dev {:dependencies [
-                                  [midje "1.5.1"]
+                                  [midje "1.7.0"]
                                  ]}}
   :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main letterpress-solver.core)

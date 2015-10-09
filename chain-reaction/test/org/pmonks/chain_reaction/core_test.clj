@@ -244,7 +244,25 @@
   (legal-move? (set-cell (new-board) [4 4] (new-cell :player1 1)) :player2 [4 4]) => false
   )
 
+(fact "place-piece"
+  (place-piece (new-board) :player1 [0 0]) => {:cells {[0 0] {:count 1 :owner :player1}}
+                                               :height 8 :width 8}
+  (place-piece (new-board) :player1 [1 1]) => {:cells {[1 1] {:count 1 :owner :player1}}
+                                               :height 8 :width 8}
+  (place-piece (new-board) :player1 [7 6]) => {:cells {[7 6] {:count 1 :owner :player1}}
+                                               :height 8 :width 8}
 
+  (let [board (set-cell (new-board) [0 0] (new-cell :player1 1))]
+    (place-piece board :player2 [7 6])     => {:cells {[0 0] {:count 1 :owner :player1}
+                                                     [7 6] {:count 1 :owner :player2}}
+                                               :height 8 :width 8})
+
+  (let [board (set-cell (set-cell (new-board) [0 0] (new-cell :player1 1)) [7 7] (new-cell :player2 1))]
+    (place-piece board :player1 [0 0])     => {:cells {[0 1] {:count 1 :owner :player1}
+                                                       [1 0] {:count 1 :owner :player1}
+                                                       [7 7] {:count 1 :owner :player2}}
+                                               :height 8 :width 8})
+  )
 
 
 
