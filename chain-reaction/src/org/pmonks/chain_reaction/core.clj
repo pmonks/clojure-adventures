@@ -40,6 +40,10 @@
   [board]
   (keys (board-cells board)))
 
+(defn players
+  [board]
+  (set (map :owner (vals (board-cells board)))))
+
 (defn get-cell
   [board coords]
   {:pre [ (legal-coords? board coords) ]}

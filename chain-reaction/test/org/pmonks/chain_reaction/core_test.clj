@@ -47,6 +47,22 @@
   (occupied-cells (set-cell (new-board) [0 0] (new-cell :player1 1))) => '([0 0])
   )
 
+(fact "players"
+  (players (new-board))                                        => #{}
+  (players (set-cell (new-board) [0 0] (new-cell :player1 1))) => #{:player1}
+
+  (let [board (set-cell (set-cell (new-board) [0 0] (new-cell :player1 1)) [1 1] (new-cell :player2 1))]
+    (players board) => #{:player1 :player2})
+
+  (let [board (set-cell
+                (set-cell
+                  (set-cell (new-board)
+                            [0 0] (new-cell :player1 1))
+                  [1 1] (new-cell :player2 1))
+                [0 1] (new-cell :player3 1))]
+    (players board) => #{:player1 :player2 :player3})
+  )
+
 (fact "cell-owner"
   (cell-owner (new-board) [0 0])                                        => nil
   (cell-owner (set-cell (new-board) [0 0] (new-cell :player1 1)) [0 0]) => :player1
