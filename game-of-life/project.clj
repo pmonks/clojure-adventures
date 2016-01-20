@@ -12,5 +12,5 @@
   :url "https://github.com/pmonks/clojure-adventures/tree/master/game-of-life"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url "http://creativecommons.org/licenses/by-sa/3.0/"}
-  :dependencies [[org.clojure/clojure "1.4.0"]]
+  :dependencies [[org.clojure/clojure "1.8.0"]]
   :main game-of-life.core)
