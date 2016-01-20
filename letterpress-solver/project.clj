@@ -15,11 +15,11 @@
             :url "http://creativecommons.org/licenses/by-sa/3.0/"}
   :javac-target "1.7"
   :dependencies [
-                 [org.clojure/clojure "1.5.1"]
+                 [org.clojure/clojure "1.8.0"]
                  [org.clojure/tools.cli "0.3.3"]
                 ]
   :profiles {:dev {:dependencies [
-                                  [midje "1.7.0"]
+                                  [midje "1.8.3"]
                                  ]}}
   :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main letterpress-solver.core)
