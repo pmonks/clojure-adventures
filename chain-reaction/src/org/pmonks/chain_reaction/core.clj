@@ -1,6 +1,7 @@
 (ns org.pmonks.chain-reaction.core)
 
 (defn new-board
+  "Returns a new board (defaults to 8x8 & empty, unless otherwise specified)."
   ([]      (new-board 8 8 nil))
   ([w h]   (new-board w h nil))
   ([w h c] { :width  w
@@ -8,24 +9,29 @@
              :cells  (if (nil? c) {} c) }))
 
 (defn new-cell
+  "Returns a new cell."
   ([] (new-cell nil 0))
   ([owner count]
    (when-not (zero? count)
     {:owner owner, :count count} )))
 
 (defn board-width
+  "Returns the width of the given board."
   [board]
   (:width board))
 
 (defn board-height
+  "Returns the height of the given board."
   [board]
   (:height board))
 
 (defn board-cells
+  "Returns all cells on the given board."
   [board]
   (:cells board))
 
 (defn legal-coords?
+  "Are the given coordinates legal for the given board?"
   [board [x y]]
   (and (>= x 0)
        (<  x (board-width  board))
@@ -33,18 +39,22 @@
        (<  y (board-height board))))
 
 (defn all-cells
+  "Returns all cells on the given board."
   [board]
   (for [x (range (board-width board)) y (range (board-height board))] [x y]))
 
 (defn occupied-cells
+  "Returns a set of the occupied cells on the given board."
   [board]
   (keys (board-cells board)))
 
 (defn players
+  "Returns all of the players on the given board."
   [board]
   (set (map :owner (vals (board-cells board)))))
 
 (defn get-cell
+  "Returns thr given cell on the board."
   [board coords]
   {:pre [ (legal-coords? board coords) ]}
   (when-let [cells (board-cells board)]
@@ -52,6 +62,7 @@
       cell)))
 
 (defn set-cell
+  "Sets the given cell on the board."
   [board coords cell]
   {:pre [ (legal-coords? board coords) ]}
   (if (nil? cell)
@@ -63,6 +74,7 @@
                (assoc (board-cells board) coords cell))))
 
 (defn cell-owner
+  "Returns the owner of the given cell (nil if unowned)."
   ([board coords]
    (cell-owner (get-cell board coords)))
   ([cell]
@@ -70,12 +82,14 @@
     (:owner cell))))
 
 (defn cell-unowned?
+  "Is the given cell unowned?"
   ([board coords]
    (cell-unowned? (get-cell board coords)))
   ([cell]
    (nil? (cell-owner cell))))
 
 (defn cell-count
+  "Returns the number of items in the given cell."
   ([board coords]
    (cell-count (get-cell board coords)))
   ([cell]
@@ -84,6 +98,7 @@
     (:count cell))))
 
 (defn number-of-neighbours
+  "Returns the number of neighbours the given cell has."
   [board [x y]]
   (- 4 (if (= x 0)                          1 0)
        (if (= x (dec (board-width board)))  1 0)
@@ -91,6 +106,7 @@
        (if (= y (dec (board-height board))) 1 0)))
 
 (defn neighbours
+  "Returns the neighbours of the given cell."
   [board [x y]]
   { :pre [ (legal-coords? board [x y]) ]}
   (filter #(legal-coords? board %) [[x       (dec y)]
@@ -99,10 +115,12 @@
                                     [x       (inc y)]]))
 
 (defn full?
+  "Is the given cell full?"
   [board coords]
   (>= (cell-count board coords) (number-of-neighbours board coords)))
 
 (defn any-full-cells?
+  "Are there any full cells on the board?"
   [board]
   (boolean (some true? (map #(full? board %) (occupied-cells board)))))
 
@@ -119,6 +137,7 @@
           (recur board (first other-cells) (rest other-cells)))))))
 
 (defn explode-full-cell
+  "Explode the given full cell (which must be full)."
   [board coords]
   {:pre [ (full? board coords) ]}
   (let [owner          (cell-owner           board coords)
@@ -147,6 +166,7 @@
       board)))
 
 (defn legal-move?
+  "Is the given move legal?"
   [board player coords]
   (if (legal-coords? board coords)
     (let [cell (get-cell board coords)]
