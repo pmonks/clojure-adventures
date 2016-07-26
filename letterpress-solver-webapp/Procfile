@@ -1,1 +1,1 @@
-web: lein with-profile production trampoline run -m letterpress-solver-webapp.core
+web: java -jar target/letterpress-solver-webapp-0.1.0-SNAPSHOT-standalone.jar

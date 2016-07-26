@@ -22,6 +22,6 @@ Note: if you're lucky the [instance deployed on Heroku](http://pmonks-letterpres
 
 ## License
 
-Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
+Copyright © 2012-2016 Peter Monks (pmonks@gmail.com)
 
 Distributed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.

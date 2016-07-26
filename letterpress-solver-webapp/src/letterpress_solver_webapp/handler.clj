@@ -1,5 +1,5 @@
 ;
-; Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
+; Copyright © 2012-2016 Peter Monks (pmonks@gmail.com)
 ;
 ; This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 ; Unported License. To view a copy of this license, visit
@@ -38,7 +38,7 @@
   ([all-letters required-letters number-of-results]
    (page-layout
      [:h1 "LetterPress Solver"]
-     [:h3 "By Peter Monks"]
+     [:h3 "By " [:a {:href "https://github.com/pmonks"} "Peter Monks"]]
      [:p "A solver for the orsm iOS game "
          [:a {:href "https://itunes.apple.com/us/app/letterpress-word-game/id526619424?mt=8"} "LetterPress"]
          ". " [:strong "Cheating is bad mmmkay?"] [:br] "Source, license information, issue tracker etc. available on "
@@ -48,7 +48,7 @@
        [:br]
        (text-field {:placeholder "Letters you'd like the words to include (optional)", :tabindex 2, :size 100 } "required-letters" required-letters)
        [:br]
-       (text-field {:placeholder "Number of words to display", :tabindex 3, :size 20 } "number-of-results" number-of-results) "results"
+       (text-field {:placeholder "Number of words to display", :tabindex 3, :size 4 } "number-of-results" number-of-results) " results"
        [:br]
        (submit-button {:tabindex 4} "Solve"))
      [:br]

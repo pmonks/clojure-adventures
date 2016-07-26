@@ -1,5 +1,5 @@
 ;
-; Copyright © 2012-2013 Peter Monks (pmonks@gmail.com)
+; Copyright © 2012-2016 Peter Monks (pmonks@gmail.com)
 ;
 ; This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 ; Unported License. To view a copy of this license, visit
@@ -34,7 +34,8 @@
   e.g. (matching-words \"abcd\" [\"bad\" \"good\"]) -> [\"bad\"]"
   [characters dictionary]
   (let [character-frequencies (frequencies characters)]
-    (sort-by #(conj [] (- (count %)) %) (filter #(contains-word? character-frequencies %) dictionary))))
+    (sort-by #(conj [] (- (count %)) %)
+             (filter #(contains-word? character-frequencies %) dictionary))))
 
 (defn- contains-letters?
   "Does the word contain all of the given letters, with at least those frequencies?"
