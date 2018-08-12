@@ -54,7 +54,7 @@
   (set (map :owner (vals (board-cells board)))))
 
 (defn get-cell
-  "Returns thr given cell on the board."
+  "Returns the given cell on the board."
   [board coords]
   {:pre [ (legal-coords? board coords) ]}
   (when-let [cells (board-cells board)]

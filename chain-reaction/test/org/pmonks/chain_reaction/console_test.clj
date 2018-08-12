@@ -14,7 +14,7 @@
 =0 =0 =0 =0 =0 =0 =0 =0
 =0 =0 =0 =0 =0 =0 =0 =0
 =0 =0 =0 =0 =0 =0 =0 =0"
- 
+
   (let [board (set-cell (new-board) [0 0] (new-cell :player1 1))]
     (board-str board) => ":player1=1 =0 =0 =0 =0 =0 =0 =0
 =0 =0 =0 =0 =0 =0 =0 =0
@@ -50,4 +50,4 @@
                                    player1-1cell-str " " ansi-empty-cell-str
                                    "\n"
                                    ansi-empty-cell-str " " ansi-empty-cell-str))
-  ) 
+  )
