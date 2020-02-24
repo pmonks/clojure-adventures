@@ -20,8 +20,8 @@ For now the letterpress solver is source only, so...
  # Wait while Maven downloads teh internetz
  lein run -- [switches]
 ```
-    Switches                 Default      Desc                                                  
-    --------                 -------      ----                                                  
+    Switches                 Default      Desc
+    --------                 -------      ----
     -a, --all-letters                     All letters on the board (mandatory)
     -r, --required-letters                The letters that must appear in the resulting word(s) (optional)
     -n, --num-results        100          The number of results (optional)
@@ -39,6 +39,10 @@ For now the letterpress solver is source only, so...
 
 ## License
 
-Copyright © 2012-2016 Peter Monks (pmonks@gmail.com)
+Copyright © 2012 Peter Monks Some Rights Reserved
 
-Distributed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+SPDX-License-Identifier: [CC-BY-NC-SA-4.0](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html)

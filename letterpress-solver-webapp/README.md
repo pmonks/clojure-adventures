@@ -22,6 +22,10 @@ Note: if you're lucky the [instance deployed on Heroku](http://pmonks-letterpres
 
 ## License
 
-Copyright © 2012-2016 Peter Monks (pmonks@gmail.com)
+Copyright © 2012 Peter Monks Some Rights Reserved
 
-Distributed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+SPDX-License-Identifier: [CC-BY-NC-SA-4.0](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html)
