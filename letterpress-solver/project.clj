@@ -8,19 +8,14 @@
 ;
 
 (defproject letterpress-solver "0.1.0-SNAPSHOT"
-  :min-lein-version "2.6.0"
+  :min-lein-version "2.9.1"
   :description "A word finder for a variety of word games such as LetterPress and Scrabble."
   :url "https://github.com/pmonks/clojure-adventures/tree/master/letterpress-solver"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url "http://creativecommons.org/licenses/by-sa/3.0/"}
-  :javac-target "1.8"
-  :dependencies [
-                 [org.clojure/clojure "1.8.0"]
-                 [org.clojure/tools.cli "0.3.5"]
-                ]
-  :profiles {:dev {:dependencies [
-                                  [midje "1.8.3"]
-                                 ]}}
-  :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/tools.cli "1.0.194"]]
+  :profiles {:dev {:dependencies [[midje "1.9.9"]]
+                   :plugins      [[lein-midje "3.2.1"]]}}
   :main letterpress-solver.core
   :aot [letterpress-solver.core])

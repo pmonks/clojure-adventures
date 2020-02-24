@@ -11,4 +11,4 @@
   (:use midje.sweet
         letterpress-solver.core))
 
-; For orsm autotest goodness, run lein midje --lazytest
+; For orsm autotest goodness, run lein midje :autotest
